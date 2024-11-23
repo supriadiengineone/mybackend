@@ -18,10 +18,7 @@ client.connect()
     .then(() => console.log('Connected to PostgresSQL'))
     .catch(err => console.error('Connection error', err.stack));
 
-// client.query('SELECt NOW()', (err, res) => {
-//     console.log(err ? err.stack : res.rows[0]);
-//     client.end();
-// });
+    
 
 const createTableQuery =`
     CREATE TABLE pengguna (
@@ -32,7 +29,7 @@ const createTableQuery =`
     );
 `;
     
-    
+
 
 client.query(createTableQuery)
     .then(res => {
