@@ -18,7 +18,7 @@ client.connect()
     .then(() => console.log('Connected to PostgresSQL'))
     .catch(err => console.error('Connection error', err.stack));
 
-    
+
 
 const createTableQuery =`
     CREATE TABLE pengguna (
@@ -28,7 +28,7 @@ const createTableQuery =`
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     );
 `;
-    
+
 
 
 client.query(createTableQuery)
@@ -41,6 +41,8 @@ client.query(createTableQuery)
     .finally(() => {
         client.end();
         });
+
+
 
 app.listen(PORT, (error) =>{
     if(!error)
